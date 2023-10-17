@@ -33,6 +33,6 @@
 
 SELECT v.customer_id, COUNT(v.visit_id)
 FROM Visits v 
-JOIN Transactions t ON v.visit_id = t.visit_id
+LEFT JOIN Transactions t ON v.visit_id = t.visit_id
 WHERE t.transaction_id IS NULL
 GROUP BY 1
